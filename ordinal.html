@@ -1,23 +1,45 @@
-!DOCTYPE html
-html lang=en
-head
-  meta charset=UTF-8
-  titleCrusade Studios 3D Ordinal Scenetitle
-  style
-    html, body { margin 0; padding 0; width 100%; height 100%; overflow hidden; }
-    canvas { display block; width 100%; height 100%; }
-  style
-  script src=httpsordinals.comcontent958b7591a73253a266680f9854c6dd1b870a94bb7fce0fa23e3543412a730577i0script
-head
-body
-  canvas id=scenecanvas
-  script
-    window.onload = function() {
-      const canvas = document.getElementById(scene);
-      if (typeof initScene === function && canvas) {
-        initScene(canvas);
-      }
-    };
-  script
-body
-html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crusaders of BTC</title>
+    <meta name="description" content="A full 3D on-chain city and 3D crusader collection on Bitcoin.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://crusaders.crusadestudios.com/">
+    <meta property="og:title" content="Crusaders of BTC">
+    <meta property="og:description" content="Explore the on-chain city of Crusaders on Bitcoin.">
+    <meta property="og:image" content="https://crusaders.crusadestudios.com/preview.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://crusadestudios.com/">
+    <meta name="twitter:title" content="Crusaders of BTC">
+    <meta name="twitter:description" content="Explore the on-chain city of Crusaders on Bitcoin.">
+    <meta name="twitter:image" content="https://crusadestudios.com/preview.jpg">
+
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        iframe {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <iframe src="https://ordinals.com/content/958b7591a73253a266680f9854c6dd1b870a94bb7fce0fa23e3543412a730577i0"></iframe>
+</body>
+</html>
