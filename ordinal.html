@@ -1,0 +1,23 @@
+!DOCTYPE html
+html lang=en
+head
+  meta charset=UTF-8
+  titleCrusade Studios 3D Ordinal Scenetitle
+  style
+    html, body { margin 0; padding 0; width 100%; height 100%; overflow hidden; }
+    canvas { display block; width 100%; height 100%; }
+  style
+  script src=httpsordinals.comcontent958b7591a73253a266680f9854c6dd1b870a94bb7fce0fa23e3543412a730577i0script
+head
+body
+  canvas id=scenecanvas
+  script
+    window.onload = function() {
+      const canvas = document.getElementById(scene);
+      if (typeof initScene === function && canvas) {
+        initScene(canvas);
+      }
+    };
+  script
+body
+html
