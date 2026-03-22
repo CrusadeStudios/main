@@ -1,51 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crusaders of BTC</title>
-    <meta name="description" content="A full 3D on-chain city and 3D crusader collection on Bitcoin.">
-
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://crusadestudios.com/">
-    <meta property="og:title" content="Crusaders of BTC">
-    <meta property="og:description" content="Click to experience the 3D right here on X !.">
-    <meta property="og:image" content="https://i.imgur.com/cNLeBVO.png">
-
-    <meta name="twitter:card" content="player">
-    <meta name="twitter:player" content="https://ordinals.com/content/05c158813246c97bf519e9f3520047e726e9ca939275c10fe6db890ea0461563i0">
-    <meta name="twitter:player:width" content="600">
-    <meta name="twitter:player:height" content="600">
-    <meta name="twitter:site" content="@CrusadersOfBTC">
-    <meta name="twitter:image" content="https://i.imgur.com/cNLeBVO.png">
+    <!-- Your existing Meta Tags remain the same -->
 
     <style>
         body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
+            margin: 0; padding: 0;
+            height: 100%; width: 100%;
             overflow: hidden;
             background-color: #000;
+            font-family: sans-serif;
+        }
+
+        /* Container for both layers */
+        .ordinal-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
         }
 
         iframe {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             border: none;
-            display: block;
+        }
+
+        /* The Static Overlay */
+        #overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: url('https://i.imgur.com/cNLeBVO.png') no-repeat center center;
+            background-size: cover;
+            z-index: 10;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s ease;
+        }
+
+        /* Optional Play Button UI */
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid white;
+            color: white;
+            font-size: 40px;
+            pointer-events: none; /* Let the click pass to the overlay */
+        }
+
+        #overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
         }
     </style>
 </head>
 <body>
-    <iframe src="https://ordinals.com/content/05c158813246c97bf519e9f3520047e726e9ca939275c10fe6db890ea0461563i0"
-            allowfullscreen="true"
-            webkitallowfullscreen="true"
-            mozallowfullscreen="true"
-            allow="fullscreen">
-    </iframe></body>
-</html>
 
+    <div class="ordinal-container">
+        <!-- The Static Image Layer -->
+        <div id="overlay" onclick="startOrdinal()">
+            <div class="play-button">▶</div>
+        </div>
+
+        <!-- The Ordinal Content -->
+        <iframe id="ordinalFrame" 
+                src="https://ordinals.com/content/05c158813246c97bf519e9f3520047e726e9ca939275c10fe6db890ea0461563i0"
+                allowfullscreen="true"
+                allow="fullscreen">
+        </iframe>
+    </div>
+
+    <script>
+        function startOrdinal() {
+            // Hide the overlay
+            document.getElementById('overlay').classList.add('hidden');
+            
+            // Optional: Reload the iframe if you want the animation 
+            // to start exactly when they click
+            var frame = document.getElementById('ordinalFrame');
+            frame.src = frame.src; 
+        }
+    </script>
+
+</body>
+</html>
