@@ -20,7 +20,7 @@
     <meta name="twitter:image" content="https://i.imgur.com/cNLeBVO.png">
 
     <style>
-        /* 1. Prevent the 'bounce' effect on mobile and lock the scroll */
+        /* 1. Prevent the 'bounce' effect and lock the scroll */
         body, html {
             margin: 0;
             padding: 0;
@@ -28,15 +28,15 @@
             width: 100%;
             overflow: hidden;
             background-color: #000;
-            position: fixed; /* Crucial for iOS Safari */
+            position: fixed; 
         }
 
-        /* 2. The magic container that respects mobile browser bars */
+        /* 2. The container that fixes the mobile bar displacement */
         .ordinal-wrapper {
             position: relative;
             width: 100vw;
-            height: 100vh; /* Fallback for older browsers */
-            height: 100dvh; /* Modern fix for dynamic mobile bars */
+            height: 100vh; /* Fallback */
+            height: 100dvh; /* Dynamic fix */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -50,28 +50,15 @@
         }
     </style>
 </head>
-<body onclick="hideHint()">
+<body>
 
     <div class="ordinal-wrapper">
-        <div id="hint">Click to Interact ⚔️</div>
-        
         <iframe 
             src="https://ordinals.com/content/62a12254ea1ce41e6ae065e47447a0c250039dc182952552d35274c9f00fbc63i0"
             allowfullscreen="true"
             allow="fullscreen">
         </iframe>
     </div>
-
-    <script>
-        function hideHint() {
-            const hint = document.getElementById('hint');
-            if (hint) {
-                hint.style.opacity = '0';
-                // Remove from DOM after fade out so it doesn't exist anymore
-                setTimeout(() => hint.remove(), 400);
-            }
-        }
-    </script>
 
 </body>
 </html>
