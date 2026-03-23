@@ -48,23 +48,6 @@
             border: none;
             display: block;
         }
-
-        /* 3. Style the hint so it's readable but out of the way */
-        #hint {
-            position: absolute;
-            z-index: 10;
-            color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            pointer-events: none; /* Allows clicks to pass THROUGH to the 3D model */
-            transition: opacity 0.4s ease;
-            text-shadow: 0 0 15px rgba(0,0,0,1);
-            background: rgba(0,0,0,0.4);
-            padding: 10px 20px;
-            border-radius: 30px;
-        }
     </style>
 </head>
 <body onclick="hideHint()">
